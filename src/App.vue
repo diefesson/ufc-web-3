@@ -3,7 +3,10 @@
 </template>
 
 <style lang="scss">
-html,
+html{
+  height: 100%;
+  width: 100%;
+}
 body {
   margin: 0px;
   min-height: 100%;

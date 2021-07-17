@@ -2,26 +2,13 @@
   <div class="posts">
     <ul class="post" v-for="post in posts" :key="post.id">
       <li>
-        Post
+        post
         <ul>
           <li>title: {{ post.title }}</li>
           <li>body: {{ post.body }}</li>
-        </ul>
-      </li>
-      <li>
-        User
-        <ul>
-          <li>name: {{ post.user.name }}</li>
-          <li>username: {{ post.user.username }}</li>
-          <li>email: {{ post.user.email }}</li>
-          <li>Address:
-            <ul>
-              <li>street: {{post.user.address.street}}</li>
-              <li>suite: {{post.user.address.suite}}</li>
-              <li>city: {{post.user.address.city}}</li>
-              <li>zipcode: {{post.user.address.zipcode}}</li>
-              <li>geo: {{post.user.address.geo.lat}}, {{post.user.address.geo.lng}}</li>
-            </ul>
+          <li>
+            user
+            <user v-bind:user="post.user" />
           </li>
         </ul>
       </li>
@@ -31,6 +18,7 @@
 
 <script>
 import PostService from "../scripts/PostService.js";
+import User from "./User.vue";
 
 export default {
   name: "Posts",
@@ -48,5 +36,6 @@ export default {
       console.log(this.posts);
     },
   },
+  components: { User },
 };
 </script>

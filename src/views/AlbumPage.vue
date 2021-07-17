@@ -1,12 +1,12 @@
 <template >
-    <albuns />
+  <albums />
 </template>
 
 <script>
-import Albuns from "@/components/Albuns.vue";
+import Albums from "../components/Albums.vue";
 
 export default {
   name: "Home",
-  components: { Albuns },
+  components: { Albums },
 };
 </script>

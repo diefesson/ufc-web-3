@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import PostPage from '../views/PostPage.vue'
 import AlbumPage from '../views/AlbumPage.vue'
 import TodoPage from '../views/TodoPage.vue'
+import NotFound from "../views/NotFound.vue"
 
 const routes = [
   {
@@ -13,14 +14,19 @@ const routes = [
     name: 'Posts',
     component: PostPage
   }, {
-    path: '/albuns',
+    path: '/albums',
     name: 'Albuns',
     component: AlbumPage
-  },  {
+  }, {
     path: '/todos',
     name: 'Todos',
     component: TodoPage
   },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "NotFound",
+    component: NotFound
+  }
 ]
 
 const router = createRouter({
