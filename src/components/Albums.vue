@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import AlbumService from "../scripts/AlbumService.js";
+import AlbumService from "../scripts/service/AlbumService.js";
 import User from "./User.vue";
 
 export default {

@@ -1,5 +1,5 @@
-import PostRepository from "./PostRepository.js"
-import UserRepository from "./UserRepository.js"
+import PostRepository from "../repository/PostRepository.js"
+import UserRepository from "../repository/UserRepository.js"
 
 async function getPosts() {
     let users = new Map()

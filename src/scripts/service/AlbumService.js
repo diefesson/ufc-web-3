@@ -1,5 +1,5 @@
-import AlbumRepository from "./AlbumRepository";
-import UserRepository from "./UserRepository";
+import AlbumRepository from "../repository/AlbumRepository";
+import UserRepository from "../repository/UserRepository";
 
 async function getAlbums() {
     let albums = await AlbumRepository.getAlbums()

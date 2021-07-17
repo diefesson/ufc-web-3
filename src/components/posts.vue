@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import PostService from "../scripts/PostService.js";
+import PostService from "../scripts/service/PostService.js";
 import User from "./User.vue";
 
 export default {
