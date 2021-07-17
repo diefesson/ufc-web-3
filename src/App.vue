@@ -1,4 +1,9 @@
 <template>
+  <nav>
+    <router-link to="/posts">Posts</router-link>
+    <router-link to="/albums">Albums</router-link>
+    <router-link to="/todos">Todos</router-link>
+  </nav>
   <router-view />
 </template>
 
@@ -21,14 +26,16 @@ body {
   min-width: 100%;
 }
 
-#nav {
-  padding: 30px;
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 
   a {
     font-weight: bold;
     color: #2c3e50;
 
-    &.router-link-exact-active {
+    &:active {
       color: #42b983;
     }
   }

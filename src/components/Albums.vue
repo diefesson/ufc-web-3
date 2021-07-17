@@ -30,7 +30,6 @@ export default {
   methods: {
     async updateAlbuns() {
       this.albums = await AlbumService.getAlbums();
-      console.log(this.albums)
     },
   },
   components: { User },

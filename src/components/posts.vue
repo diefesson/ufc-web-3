@@ -33,7 +33,6 @@ export default {
   methods: {
     async updatePosts() {
       this.posts = await PostService.getPosts();
-      console.log(this.posts);
     },
   },
   components: { User },
