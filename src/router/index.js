@@ -1,11 +1,25 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import PostPage from '../views/PostPage.vue'
+import AlbumPage from '../views/AlbumPage.vue'
+import TodoPage from '../views/TodoPage.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Index',
+    component: PostPage
+  }, {
+    path: '/posts',
+    name: 'Posts',
+    component: PostPage
+  }, {
+    path: '/albuns',
+    name: 'Albuns',
+    component: AlbumPage
+  },  {
+    path: '/todos',
+    name: 'Todos',
+    component: TodoPage
   },
 ]
 
