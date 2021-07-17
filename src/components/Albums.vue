@@ -1,6 +1,6 @@
 <template>
-  <ul v-for="album in albums" v-bind:key="album.id">
-    <li>
+  <ul>
+    <li v-for="album in albums" v-bind:key="album.id">
       album
       <ul>
         <li>Title {{ album.title }}</li>

@@ -1,19 +1,17 @@
 <template>
-  <div class="posts">
-    <ul class="post" v-for="post in posts" :key="post.id">
-      <li>
-        post
-        <ul>
-          <li>title: {{ post.title }}</li>
-          <li>body: {{ post.body }}</li>
-          <li>
-            user
-            <user v-bind:user="post.user" />
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+  <ul>
+    <li v-for="post in posts" :key="post.id">
+      post
+      <ul>
+        <li>title: {{ post.title }}</li>
+        <li>body: {{ post.body }}</li>
+        <li>
+          user
+          <user v-bind:user="post.user" />
+        </li>
+      </ul>
+    </li>
+  </ul>
 </template>
 
 <script>
