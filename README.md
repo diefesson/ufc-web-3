@@ -1,2 +1,2 @@
 # web-3
-web discipline project
+Project of the Software Development for the Web course
