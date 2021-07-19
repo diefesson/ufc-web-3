@@ -3,13 +3,10 @@ import UserRepository from "../repository/UserRepository";
 
 async function getCompletedTodos() {
     let todos = await TodoRepository.getCompletedTodos()
-    let users = new Map()
+    let users = await UserRepository.getUsers()
     for (let i in todos) {
         let todo = todos[i]
-        if (users[todo.userId] == null) {
-            users[todo.userId] = await UserRepository.getUser(todo.userId)
-        }
-        todo.user = users[todo.userId]
+        todo.user = users.find((u) => u.id == todo.userId)
     }
     return todos
 }

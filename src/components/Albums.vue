@@ -1,12 +1,21 @@
 <template>
   <ul>
-    <li v-for="album in albums" v-bind:key="album.id">
+    <li v-for="a in albums" v-bind:key="a.id">
       album
       <ul>
-        <li>Title {{ album.title }}</li>
+        <li>Title {{ a.title }}</li>
         <li>
           user
-          <user v-bind:user="album.user" />
+          <user v-bind:user="a.user" />
+        </li>
+        <li>
+          photos:
+          <ul>
+            <li v-for="p in a.photos" v-bind:key="p.id">
+              photo:
+              <photo v-bind:photo="p" />
+            </li>
+          </ul>
         </li>
       </ul>
     </li>
@@ -16,6 +25,7 @@
 <script>
 import AlbumService from "../scripts/service/AlbumService.js";
 import User from "./User.vue";
+import Photo from "./Photo.vue";
 
 export default {
   name: "Albums",
@@ -32,6 +42,6 @@ export default {
       this.albums = await AlbumService.getAlbums();
     },
   },
-  components: { User },
+  components: { User, Photo },
 };
 </script>
