@@ -1,15 +1,18 @@
 import PostRepository from "../repository/PostRepository.js"
 import UserRepository from "../repository/UserRepository.js"
+import CommentRepository from "../repository/CommentRepository.js"
 
 async function getPosts() {
-    let users = new Map()
+    // Because the number of necessary HTTP requests
+    // In this case it's more efficient to download all data in
+    // single requests
+    let users = await UserRepository.getUsers()
+    let comments = await CommentRepository.getComments()
     let posts = await PostRepository.getPosts()
     for (let i in posts) {
         let post = posts[i]
-        if (users[post.userId] == null) {
-            users[post.userId] = await UserRepository.getUser(post.userId)
-        }
-        post.user = users[post.userId]
+        post.user = users.find((u) => u.id == post.userId)
+        post.comments = comments.filter((c) => c.postId == post.id)
     }
     return posts
 }
